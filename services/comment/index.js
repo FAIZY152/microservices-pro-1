@@ -15,13 +15,6 @@ const startServer = () => {
     res.send("Hello World!");
   });
 
-  const publicDir = path.join(__dirname, "public");
-  if (fs.existsSync(publicDir)) {
-    app.use(express.static(publicDir));
-  } else {
-    console.warn(`Warning: public directory "${publicDir}" does not exist.`);
-  }
-
   app.listen(port, (err) => {
     if (err) {
       return console.error("Failed to start server:", err);
