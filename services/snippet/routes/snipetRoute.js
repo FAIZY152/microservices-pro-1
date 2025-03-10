@@ -1,7 +1,9 @@
 import express from "express";
+import { createSnipet, getSnipet } from "../controller/snipet.controller.js";
 
-const router = express.Router();
+const SnipetRoute = express.Router();
 
-router.route("/create").post(createSnipet);
+SnipetRoute.route("/create").post(createSnipet);
+SnipetRoute.route("/get").get(getSnipet);
 
-export default router;
+export default SnipetRoute;

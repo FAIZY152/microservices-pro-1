@@ -12,7 +12,7 @@ app.use(cors());
 
 const startServer = () => {
   app.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.send("Hello World from comment!");
   });
 
   app.listen(port, (err) => {
