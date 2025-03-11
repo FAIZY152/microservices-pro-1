@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import cors from "cors";
+import commentRouter from "./routes/CommentRoute";
 
 const app = express();
 const port = 8000;
@@ -14,6 +15,8 @@ const startServer = () => {
   app.get("/", (req, res) => {
     res.send("Hello World from comment!");
   });
+
+  app.use("/api/v1/snippet", commentRouter);
 
   app.listen(port, (err) => {
     if (err) {
